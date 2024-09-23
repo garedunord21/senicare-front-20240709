@@ -25,7 +25,7 @@ const usePagination = <T>() => {
         const totalSection = Math.ceil(totalPage / PAGES_PER_SECTION);
         setTotalSection(totalSection);
 
-        if (totalCount) {
+        if (!totalCount) {
             setCurrentPage(0);
             setCurrentSection(0);
         } else {
@@ -84,7 +84,7 @@ const usePagination = <T>() => {
         setCurrentPage(currentSection * PAGES_PER_SECTION + 1);
     };
 
-    // effect: toolList가 변경될 시 실행할 함수 //
+    // effect: totalList가 변경될 시 실행할 함수 //
     useEffect(() => {
         init(totalList);
     }, [totalList]);

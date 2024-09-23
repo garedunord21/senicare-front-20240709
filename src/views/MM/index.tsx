@@ -137,7 +137,7 @@ function PatchBox({ unShow }: PatchBoxProps) {
 
 // interface: 용품 리스트 아이템 컴포넌트 Properties //
 interface TableRowProps {
-    tool: Tool,
+    tool: Tool;
     onUpdateButtonClickHandler: (toolNumber: number) => void;
 }
 
@@ -183,8 +183,8 @@ export default function MM() {
     const { 
         currentPage, totalPage, totalCount, viewList, pageList,
         setTotalList, initViewList, initPageList,
-        onPageClickHandler, onNextSectionClickHandler, onPreSectionClickHandler
-     } = usePagination<Tool>();
+        onPageClickHandler, onPreSectionClickHandler, onNextSectionClickHandler
+    } = usePagination<Tool>();
 
     // function: get tool list response 처리 함수 //
     const getToolListResponse = (resposenBody: GetToolListResponseDto | ResponseDto | null) => {
@@ -264,7 +264,7 @@ export default function MM() {
                             <div className='td-delete'>삭제</div>
                         </div>
                     </div>
-                    {viewList.map((tool, index) => <TableRow key={index} tool={tool} onUpdateButtonClickHandler={onUpdateButtonClickHandler}/>)}
+                    {viewList.map((tool, index) => <TableRow key={index} tool={tool} onUpdateButtonClickHandler={onUpdateButtonClickHandler} />)}
                 </div>
             </div>
             <div className='bottom'>
