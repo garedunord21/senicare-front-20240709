@@ -249,10 +249,10 @@ function TableRow({ tool, getToolList, onUpdateButtonClickHandler }: TableRowPro
     // function: delete tool response 처리 함수 //
     const deleteToolResponse = (responseBody: ResponseDto | null) => {
         const message = 
-            !responseBody ? '서버에 문제가 있습니다.' : 
-            responseBody.code === 'VF' ? '잘못된 접근입니다.' : 
-            responseBody.code === 'AF' ? '잘못된 접근입니다.' : 
-            responseBody.code === 'NT' ? '존재하지 않는 용품입니다.' : 
+            !responseBody ? '서버에 문제가 있습니다.' :
+            responseBody.code === 'VF' ? '잘못된 접근입니다.' :
+            responseBody.code === 'AF' ? '잘못된 접근입니다.' :
+            responseBody.code === 'NT' ? '존재하지 않는 용품입니다.' :
             responseBody.code === 'DBE' ? '서버에 문제가 있습니다.' : '';
 
         const isSuccessed = responseBody !== null && responseBody.code === 'SU';
