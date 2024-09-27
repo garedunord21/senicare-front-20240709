@@ -89,7 +89,7 @@ export default function Senicare() {
         const message = 
             !responseBody ? '로그인 유저 정보를 불러오는데 문제가 발생했습니다.' :
             responseBody.code === 'NI' ? '로그인 유저 정보가 존재하지 않습니다.' :
-            responseBody.code === 'AF' ? '잘못된 접근입니다.' :
+            responseBody.code === 'AF' ? '잘못된 접근입니다.' : 
             responseBody.code === 'DBE' ? '로그인 유저 정보를 불러오는데 문제가 발생했습니다.' : '';
 
         const isSuccessed = responseBody !== null && responseBody.code === 'SU';
@@ -103,7 +103,7 @@ export default function Senicare() {
         }
 
         const { userId, name, telNumber } = responseBody as GetSignInResponseDto;
-        setSignInUser({userId, name, telNumber});
+        setSignInUser({ userId, name, telNumber });
 
     };
 
@@ -122,8 +122,8 @@ export default function Senicare() {
             <Route path={CS_PATH} element={<MainLayout />}>
                 <Route index element={<CS />} />
                 <Route path={CS_WRITE_PATH} element={<CSWrite />} />
-                <Route path={CS_DETAIL_PATH(':customNumber')} element={<CSDetail />} />
-                <Route path={CS_UPDATE_PATH(':customNumber')} element={<CSUpdate />} />
+                <Route path={CS_DETAIL_PATH(':customerNumber')} element={<CSDetail />} />
+                <Route path={CS_UPDATE_PATH(':customerNumber')} element={<CSUpdate />} />
             </Route>
             <Route path={MM_PATH} element={<MainLayout />}>
                 <Route index element={<MM />} />
