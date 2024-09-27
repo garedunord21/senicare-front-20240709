@@ -14,7 +14,7 @@
 #cs-detail-wrapper .middle {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 10px;
 }
 
 #cs-detail-wrapper .bottom {
@@ -51,15 +51,27 @@
 #cs-detail-wrapper .info-label {
     width: 64px;
 
-    color: rgba(64,64,64,1);
+    color: rgba(64, 64, 64, 1);
     font-size: 16px;
     font-weight: 700;
 }
 
 #cs-detail-wrapper .info-text {
-    color: rgba(64,64,64,1);
+    color: rgba(64, 64, 64, 1);
     
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
+}
+
+#cs-detail-wrapper .button-box {
+    display: flex;
+    gap: 12px;
+}
+
+#cs-detail-wrapper .title {
+    color: rgba(64, 64, 64, 1);
+
+    font-size: 16px;
+    font-weight: 700;
 }
