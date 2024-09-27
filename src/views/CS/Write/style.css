@@ -140,7 +140,7 @@
     margin-bottom: 40px;
 }
 
-#cs-write-wrapper .modal-main .th, 
+#cs-write-wrapper .modal-main .th,
 #cs-write-wrapper .modal-main .tr {
     gap: 52px;
 }
@@ -174,7 +174,7 @@
     width: 200px;
 }
 
-#cs-write-wrapper .mocal-pagination-box {
+#cs-write-wrapper .modal-pagination-box {
     display: flex;
     justify-content: center;
 }

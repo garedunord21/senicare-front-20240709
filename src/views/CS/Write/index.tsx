@@ -17,7 +17,7 @@ const defaultProfileImageUrl = 'https://blog.kakaocdn.net/dn/4CElL/btrQw18lZMc/Q
 // component: 고객 정보 작성 화면 컴포넌트 //
 export default function CSWrite() {
 
-    // state: 로그인 유지 상태 //
+    // state: 로그인 유저 상태 //
     const { signInUser } = useSignInUserStore();
 
     // state: 이미지 입력 참조 //
@@ -64,9 +64,9 @@ export default function CSWrite() {
 
     // function: get nurse list response 처리 함수 //
     const getNurseListResponse = (responseBody: GetNurseListResponseDto | ResponseDto | null) => {
-        const message = 
-            !responseBody ? '서버에 문제가 있습니다.' : 
-            responseBody.code === 'AF' ? '잘못된 접근입니다.' : 
+        const message =
+            !responseBody ? '서버에 문제가 있습니다.' :
+            responseBody.code === 'AF' ? '잘못된 접근입니다.' :
             responseBody.code === 'DBE' ? '서버에 문제가 있습니다.' : '';
 
         const isSuccessed = responseBody !== null && responseBody.code === 'SU';
@@ -139,7 +139,7 @@ export default function CSWrite() {
         const accessToken = cookies[ACCESS_TOKEN];
         if (!accessToken) return;
         getNurseListRequest(accessToken).then(getNurseListResponse);
-    }, [])
+    }, []);
 
     // effect: 모달 오픈 상태가 바뀔 시 스크롤 여부 함수 //
     useEffect(() => {
@@ -154,17 +154,17 @@ export default function CSWrite() {
     return (
         <div id='cs-write-wrapper'>
             <div className='main'>
-                <div className='profile-image' style={{ backgroundImage: `url(${previewUrl})`}} onClick={onProfileImageClickHandler}>
-                    <input ref={imageInputRef} style={{display: 'none' }} type='file' accept='image/*' onChange={onImageInputChangeHandler} />
+                <div className='profile-image' style={{ backgroundImage: `url(${previewUrl})` }} onClick={onProfileImageClickHandler}>
+                    <input ref={imageInputRef} style={{ display: 'none' }} type='file' accept='image/*' onChange={onImageInputChangeHandler} />
                 </div>
                 <div className='input-container'>
                     <div className='input-box'>
                         <div className='input-label'>고객 이름</div>
-                        <input className='input' value={name} placeholder='고객 이름을 입력하세요.' onChange={onNameChangeHandler}/>
+                        <input className='input' value={name} placeholder='고객 이름을 입력하세요.' onChange={onNameChangeHandler} />
                     </div>
                     <div className='input-box'>
                         <div className='input-label'>생년월일</div>
-                        <input className='input' value={birth} placeholder='6자리 생년월일을 입력하세요.' onChange={onBirthChangeHandler}/>
+                        <input className='input' value={birth} placeholder='6자리 생년월일을 입력하세요.' onChange={onBirthChangeHandler} />
                     </div>
                     <div className='input-box'>
                         <div className='input-label'>담당자</div>
@@ -176,7 +176,7 @@ export default function CSWrite() {
                     </div>
                     <div className='input-box'>
                         <div className='input-label'>주소</div>
-                        <input className='input' value={address} placeholder='주소를 선택하세요.' />
+                        <input className='input' value={address} readOnly placeholder='주소를 선택하세요.' />
                         <div className='button-box'>
                             <div className='button disable' onClick={onAddressButtonClickHandler}>검색</div>
                         </div>

@@ -34,7 +34,7 @@ const DELETE_TOOL_API_URL = (toolNumber: number | string) => `${TOOL_MODULE_URL}
 const CUSTOMER_MODULE_URL = `${SENICARE_API_DOMAIN}/api/v1/customer`;
 
 const GET_CUSTOMER_LIST_API_URL = `${CUSTOMER_MODULE_URL}`;
-const DELETE_CUSTOMER_API_URL = (customerNumber: number | string) => `${CUSTOMER_MODULE_URL}/${customerNumber}`; 
+const DELETE_CUSTOMER_API_URL = (customerNumber: number | string) => `${CUSTOMER_MODULE_URL}/${customerNumber}`;
 
 // function: Authorizarion Bearer 헤더 //
 const bearerAuthorization = (accessToken: string) => ({ headers: { 'Authorization': `Bearer ${accessToken}` } })
@@ -162,4 +162,4 @@ export const deleteCustomerRequest = async (customerNumber: number | string, acc
         .then(responseDataHandler<ResponseDto>)
         .catch(responseErrorHandler);
     return responseBody;
-}
+};
