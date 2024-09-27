@@ -166,7 +166,7 @@ export const deleteCustomerRequest = async (customerNumber: number | string, acc
 
 const FILE_UPLOAD_URL = `${SENICARE_API_DOMAIN}/file/upload`;
 
-const multipart = {headers: { 'ontent-Type': 'multipart/form-data' }}
+const multipart = { headers: { 'Content-Type': 'multipart/form-data' } };
 
 // function: file upload 요청 함수 //
 export const fileUploadRequest = async (requestBody: FormData) => {

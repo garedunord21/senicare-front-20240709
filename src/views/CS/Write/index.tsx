@@ -155,7 +155,7 @@ export default function CSWrite() {
         const searchedNurseList = originalList.filter(nurse => nurse.name.includes(searchWord));
         setTotalList(searchedNurseList);
         initViewList(searchedNurseList);
-    }
+    };
 
     // event handler: 요양사 선택 이벤트 처리 //
     const onNurseSelectHandler = (nurse: Nurse) => {
@@ -245,7 +245,7 @@ export default function CSWrite() {
                                 <div className='td-nurse-tel-number'>전화번호</div>
                             </div>
                             {viewList.map((nurse, index) => 
-                            <div key={index} className='tr' onClick={() => onNurseSelectHandler}>
+                            <div key={index} className='tr' onClick={() => onNurseSelectHandler(nurse)}>
                                 <div className='td-nurse-id'>{nurse.nurseId}</div>
                                 <div className='td-nurse-name'>{nurse.name}</div>
                                 <div className='td-nurse-tel-number'>{nurse.telNumber}</div>
