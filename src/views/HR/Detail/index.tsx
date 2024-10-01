@@ -8,7 +8,7 @@ import { GetChargedCustomerResponseDto, GetNurseResponseDto } from 'src/apis/dto
 import { ResponseDto } from 'src/apis/dto/response';
 import { usePagination } from 'src/hooks';
 import Pagination from 'src/components/Pagination';
-import { ChargerdCustomer } from 'src/types';
+import { ChargedCustomer } from 'src/types';
 import { calculateAge } from 'src/utils';
 
 // component: 인사 정보 상세 보기 컴포넌트 //
@@ -28,7 +28,7 @@ export default function HRDetail() {
     const {
         currentPage, totalPage, totalCount, viewList,
         setTotalList, initViewList, ...paginationProps
-    } = usePagination<ChargerdCustomer>();
+    } = usePagination<ChargedCustomer>();
 
     // function: 네비게이터 함수 //
     const navigator = useNavigate();
